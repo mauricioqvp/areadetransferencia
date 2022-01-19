@@ -1,13 +1,22 @@
-import React from 'react';
-import Navbar from './assets/componets/Navbar/index';
-import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import Navbar from './assets/componets/Navbar';
+import CardText from './assets/componets/CardText';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <h3>Não sei o que vai aqui! (?)</h3>
-    </>
+      <Routes>
+        <Route path="/" element={<CardText />} />
+        <Route path="/form">
+          <Route path=":movieId" element={<CardText />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
