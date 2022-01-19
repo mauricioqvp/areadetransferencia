@@ -1,9 +1,13 @@
 import React from 'react';
+import Navbar from './assets/componets/Navbar/index';
 import './App.css';
 
 function App() {
   return (
-    <h1>Não sei o que vai aqui! (?)</h1>
+    <>
+      <Navbar />
+      <h3>Não sei o que vai aqui! (?)</h3>
+    </>
   );
 }
 
