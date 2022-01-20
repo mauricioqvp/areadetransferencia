@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Frases implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	private Long id;
 	private Integer qtdUsos;
 	private String frase;
 	private Integer tipo;
