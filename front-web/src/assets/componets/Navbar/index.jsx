@@ -3,7 +3,7 @@ import { ReactComponent as PencilImg } from '../../img/pencil.svg';
 import { ReactComponent as GetOutImg } from '../../img/getout.svg';
 import './styles.css';
 
-const Navbar = () => {
+function Navbar() {
     return (
         <header>
             <nav className="container">

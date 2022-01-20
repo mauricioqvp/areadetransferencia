@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Navbar from './assets/componets/Navbar';
 import Pagination from './assets/componets/Pagination';
+import PickPage from './assets/Pages/PickPage';
 import CardText from './assets/componets/CardText';
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
       <Navbar />
       <Pagination />
       <Routes>
-        <Route path="/" element={<CardText />} />
+        <Route path="/" element={<PickPage />} />
         <Route path="/form">
-          <Route path=":movieId" element={<CardText />} />
+          <Route path=":movieId" element={<CardText text="mauricio" />} />
         </Route>
       </Routes>
     </BrowserRouter>

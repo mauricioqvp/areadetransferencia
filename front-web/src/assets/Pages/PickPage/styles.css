@@ -1,0 +1,70 @@
+.transferArea-form-container {
+    max-width: 276px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 8px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.transferArea-form {
+    width: 100%;
+}
+
+.texto {
+    font-family: "Roboto", Sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    border-color: rgb(188, 195, 195);
+}
+
+.transferArea-form-group {
+    margin-bottom: 4px;
+}
+
+.transferArea-form-group label {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.transferArea-form-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.transferArea-movie-card-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.transferArea-card-bottom-container {
+    /*background-color: rgb(218, 73, 73);*/
+  border: 1px solid rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px 15px 10px 12px;
+    border-radius: 6px;
+}
+
+/*
+.transferArea-card-bottom-container h3 {
+    color: #d4e213;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+*/
+
+.transferArea-btn {
+    background-color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    width: 130px;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: space-between; */
+}
