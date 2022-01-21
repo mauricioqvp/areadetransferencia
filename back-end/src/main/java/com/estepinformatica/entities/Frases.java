@@ -2,21 +2,41 @@ package com.estepinformatica.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_frases")
 public class Frases implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long frasesId;
 	private Integer qtdUsos;
-	private String frase;
-	private Integer tipo;
+	private String frases;
+	private Long tipo;
 	
 	public Frases() {
 	}
 
-	public Frases(Integer qtdUsos, String frase, Integer tipo) {
+	public Frases(Long frasesId, Integer qtdUsos, String frases, Long tipo) {
+		super();
+		this.frasesId = frasesId;
 		this.qtdUsos = qtdUsos;
-		this.frase = frase;
+		this.frases = frases;
 		this.tipo = tipo;
+	}
+
+	public Long getFrasesId() {
+		return frasesId;
+	}
+
+	public void setFrasesId(Long frasesId) {
+		this.frasesId = frasesId;
 	}
 
 	public Integer getQtdUsos() {
@@ -27,19 +47,23 @@ public class Frases implements Serializable {
 		this.qtdUsos = qtdUsos;
 	}
 
-	public String getFrase() {
-		return frase;
+	public String getFrases() {
+		return frases;
 	}
 
-	public void setFrase(String frase) {
-		this.frase = frase;
+	public void setFrases(String frases) {
+		this.frases = frases;
 	}
 
-	public Integer getTipo() {
+	public Long getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(Integer tipo) {
+	public void setTipo(Long tipo) {
 		this.tipo = tipo;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }

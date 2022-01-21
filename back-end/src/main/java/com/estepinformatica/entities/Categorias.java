@@ -5,25 +5,25 @@ import java.io.Serializable;
 public class Categorias implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	private Integer categoriasId;
 	private String categoria;
 	
 	public Categorias() {
 		super();
 	}
 
-	public Categorias(Integer id, String categoria) {
+	public Categorias(Integer categoriasId, String categoria) {
 		super();
-		this.id = id;
+		this.categoriasId = categoriasId;
 		this.categoria = categoria;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getCategoriasId() {
+		return categoriasId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCategoriasId(Integer categoriasId) {
+		this.categoriasId = categoriasId;
 	}
 
 	public String getCategoria() {
