@@ -14,7 +14,7 @@ function PickPage() {
         <div className="container">
             <div className="row">
                     <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
+                    <CardText  text={ movie.frase} />
                     <CardText  text="mauricio" />
                     <CardText  text="mauricio" />
                     <CardText  text="mauricio" />
