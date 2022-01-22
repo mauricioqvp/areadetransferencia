@@ -13,7 +13,7 @@ function CardText({ text }: Props) {
                     <div className="form-group transferArea-form-group">
                         <label htmlFor="email">Categoria: Gentileza</label>
                         <textarea name="message" className="texto" id="caixa-texto">
-                            Não consegui implementar
+                            { text }
                         </textarea>
                     </div>
                     <div className="transferArea-form-btn-container">
