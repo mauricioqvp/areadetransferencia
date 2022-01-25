@@ -11,8 +11,13 @@ function CardText({ text }: Props) {
                 <form className="transferArea-form">
                     <div className="form-group transferArea-form-group">
                         <label htmlFor="email">Categoria: Gentileza</label>
-                        <textarea name="message" className="texto" id="caixa-texto">
-                            { text }
+                        <textarea 
+                            name="message" 
+                            className="texto" 
+                            id="caixa-texto" 
+                            value={`${text}`}
+                            // ONCHANGE
+                        >
                         </textarea>
                     </div>
                     <div className="transferArea-form-btn-container">

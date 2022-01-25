@@ -11,20 +11,20 @@ function Navbar() {
                     <h1><TransferImg /> Área de Transferência</h1>
                     <div className="transferArea-contact-container">
                         <a href="#Editar" target="_blank" rel="noreferrer">
-                            <p className="transferArea-contact-link">
+                            <div className="transferArea-contact-link">
                                 <div className="transferArea-icon">
                                     <PencilImg />
                                 </div>
                                 Editar frases
-                            </p>
+                            </div>
                         </a>
                         <a href="#Sair" target="_blank" rel="noreferrer">
-                            <p className="transferArea-contact-link">
+                            <div className="transferArea-contact-link">
                             <div className="transferArea-icon">
                                 <GetOutImg />
                             </div>
                                 Sair
-                            </p>
+                            </div>
                         </a>
                     </div>
                 </div>

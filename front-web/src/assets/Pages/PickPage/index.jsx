@@ -1,6 +1,7 @@
 import CardText from 'assets/componets/CardText';
-import Btn from 'assets/componets/Button';
+import axios from 'axios';
 import './styles.css';
+import { BASE_URL } from 'utils/requests.ts';
 
 function PickPage() {
 
@@ -11,20 +12,42 @@ function PickPage() {
         qtdUsos: 2
     };
 
+    // FORMA ERRADA
+    axios.get(`${BASE_URL}/frases?size=12&page=0`)
+        .then(response => {
+            console.log(response.data);
+        });
+
     return (
         <div className="container">
             <div className="row">
-                    <Btn />
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text={conteudo.frase} />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
+                </div>
+                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
-                    <CardText text="mauricio" />
+                </div>
             </div>
         </div>
     );
