@@ -1,7 +1,9 @@
 import CardText from 'assets/componets/CardText';
 import axios from 'axios';
 import './styles.css';
-import { BASE_URL } from 'utils/requests.ts';
+import { BASE_URL } from 'utils/requests';
+import { useState, useEffect } from 'react';
+import { FrasePage } from 'types/frase';
 
 function PickPage() {
 
@@ -12,14 +14,21 @@ function PickPage() {
         qtdUsos: 2
     };
 
-    // FORMA ERRADA
-    axios.get(`${BASE_URL}/frases?size=12&page=0`)
-        .then(response => {
-            console.log(response.data);
-        });
+
+    const [pageNumber, setPageNumber] = useState(0);
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/frases?size=12&page=0`)
+            .then(response => {
+                const data = response.data as FrasePage;
+                console.log(response.data);
+                setPageNumber(data.number);
+            });
+    }, []);
 
     return (
         <div className="container">
+            <p>{ pageNumber }</p>
             <div className="row">
                 <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <CardText text="mauricio" />
