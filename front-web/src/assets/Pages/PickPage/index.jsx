@@ -1,9 +1,10 @@
 import CardText from 'assets/componets/CardText';
+import Btn from 'assets/componets/Button';
 import './styles.css';
 
 function PickPage() {
 
-    const movie = {
+    const conteudo = {
         id: 1,
         frase: "*Mensagem Padrão:* Deixamos a critério do hóspede, decidir a data de depósito, conforme for melhor para ele. Mas, procuramos orientar que a reserva somente fica efetivada, mediante o envio do comprovante de depósito. Em períodos de muita procura isto pode causar a perda da vaga.",
         tipo: "Gentileza",
@@ -13,16 +14,17 @@ function PickPage() {
     return (
         <div className="container">
             <div className="row">
-                    <CardText  text="mauricio" />
-                    <CardText  text={ movie.frase} />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
-                    <CardText  text="mauricio" />
+                    <Btn />
+                    <CardText text="mauricio" />
+                    <CardText text={conteudo.frase} />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
+                    <CardText text="mauricio" />
             </div>
         </div>
     );

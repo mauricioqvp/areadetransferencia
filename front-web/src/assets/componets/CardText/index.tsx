@@ -8,7 +8,6 @@ function CardText({ text }: Props) {
     return (
         <div className="transferArea-form-container">
             <div className="transferArea-card-bottom-container">
-
                 <form className="transferArea-form">
                     <div className="form-group transferArea-form-group">
                         <label htmlFor="email">Categoria: Gentileza</label>
