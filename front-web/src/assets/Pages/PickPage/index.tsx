@@ -7,56 +7,36 @@ import { FrasePage } from 'types/frase';
 
 function PickPage() {
 
-    const conteudo = {
-        id: 1,
-        frase: "*Mensagem Padrão:* Deixamos a critério do hóspede, decidir a data de depósito, conforme for melhor para ele. Mas, procuramos orientar que a reserva somente fica efetivada, mediante o envio do comprovante de depósito. Em períodos de muita procura isto pode causar a perda da vaga.",
-        tipo: "Gentileza",
-        qtdUsos: 2
-    };
-
+    const [page, setPage] = useState<FrasePage>({
+        content: [],
+        last: true,
+        totalPages: 0,
+        totalElements: 0,
+        size: 12,
+        number: 0,
+        first: true,
+        numberOfElements: 0,
+        empty: true
+    });
 
     const [pageNumber, setPageNumber] = useState(0);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/frases?size=12&page=0`)
+        axios.get(`${BASE_URL}/frases?size=12&page=${pageNumber}&sort=qtdUsos,desc`)
             .then(response => {
                 const data = response.data as FrasePage;
-                console.log(response.data);
-                setPageNumber(data.number);
+                setPage(data);
             });
-    }, []);
+    }, [pageNumber]);
 
     return (
         <div className="container">
-            <p>{ pageNumber }</p>
             <div className="row">
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text={conteudo.frase} />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
-                <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                    <CardText text="mauricio" />
-                </div>
+                {page.content.map(item => (
+                    <div key={item.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
+                        <CardText frase={item} />
+                    </div>
+                ))}
             </div>
         </div>
     );

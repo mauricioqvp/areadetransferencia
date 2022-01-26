@@ -1,10 +1,11 @@
+import { Frase } from 'types/frase';
 import './styles.css';
 
 type Props = {
-    text: string;
+    frase: Frase;
 }
 
-function CardText({ text }: Props) {
+function CardText({ frase }: Props) {
     return (
         <div className="transferArea-form-container">
             <div className="transferArea-card-bottom-container">
@@ -15,7 +16,7 @@ function CardText({ text }: Props) {
                             name="message" 
                             className="texto" 
                             id="caixa-texto" 
-                            value={`${text}`}
+                            value={`${frase.frases}`}
                             // ONCHANGE
                         >
                         </textarea>
