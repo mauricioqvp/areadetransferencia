@@ -4,6 +4,8 @@ import './styles.css';
 import { BASE_URL } from 'utils/requests';
 import { useState, useEffect } from 'react';
 import { FrasePage } from 'types/frase';
+import Btn from '../../../assets/componets/Btn';
+import Pagination from 'assets/componets/Pagination';
 
 function PickPage() {
 
@@ -29,16 +31,24 @@ function PickPage() {
             });
     }, [pageNumber]);
 
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
+
     return (
-        <div className="container">
-            <div className="row">
-                {page.content.map(item => (
-                    <div key={item.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                        <CardText frase={item} />
-                    </div>
-                ))}
+        <>
+            <Pagination page={page} onChange={handlePageChange}/>
+            <div className="container">
+                <Btn />
+                <div className="row">
+                    {page.content.map(item => (
+                        <div key={item.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
+                            <CardText frase={item} />
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

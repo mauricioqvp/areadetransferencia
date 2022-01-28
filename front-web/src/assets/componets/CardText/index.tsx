@@ -1,4 +1,6 @@
 import { Frase } from 'types/frase';
+import DuplicateBtn from '../DuplicateBtn';
+import UpdateBtn from '../UpdateBtn';
 import './styles.css';
 
 type Props = {
@@ -11,7 +13,7 @@ function CardText({ frase }: Props) {
             <div className="transferArea-card-bottom-container">
                 <form className="transferArea-form">
                     <div className="form-group transferArea-form-group">
-                        <label htmlFor="email">Categoria: Gentileza</label>
+                        <label htmlFor="email">Categoria: {`${frase.tipo}`}</label>
                         <textarea 
                             name="message" 
                             className="texto" 
@@ -22,8 +24,8 @@ function CardText({ frase }: Props) {
                         </textarea>
                     </div>
                     <div className="transferArea-form-btn-container">
-                        <button type="submit" className="btn btn-primary transferArea-btn">Copiar</button>
-                        <button type="submit" className="btn btn-primary transferArea-btn">Atualizar</button>
+                        <DuplicateBtn />
+                        <UpdateBtn />
                     </div>
                 </form >
             </div >
