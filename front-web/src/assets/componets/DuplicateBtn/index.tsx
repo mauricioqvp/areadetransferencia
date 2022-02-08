@@ -1,14 +1,18 @@
 import './styles.css';
-import { ReactComponent as DuplicateIcon } from '../../img/duplic.svg';
+import { ReactComponent as DuplicateIcon } from '../../img/rotate.svg';
 
-function DuplicateBtn() {
+type Props = {
+    id : number;
+}
+
+function DuplicateBtn({ id } : Props) {
     return (
         <div className="row">
             <div className="btn btn-primary btn-icon">
                 <DuplicateIcon />
-            </div>
+                </div>
             <div className="btn btn-primary btn-icon-text">
-                Copiar
+                Copiar {id}
             </div>
         </div>
     );

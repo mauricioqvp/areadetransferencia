@@ -24,8 +24,8 @@ function CardText({ frase }: Props) {
                         </textarea>
                     </div>
                     <div className="transferArea-form-btn-container">
-                        <DuplicateBtn />
-                        <UpdateBtn />
+                        <DuplicateBtn id={frase.id} />
+                        <UpdateBtn  />
                     </div>
                 </form >
             </div >

@@ -1,5 +1,5 @@
 import './styles.css';
-import { ReactComponent as UpdateIcon } from '../../img/rotate.svg';
+import { ReactComponent as UpdateIcon } from '../../img/duplic.svg';
 
 function UpdateBtn() {
     return (
@@ -8,7 +8,7 @@ function UpdateBtn() {
                 <UpdateIcon />
             </div>
             <div className="btn btn-primary btn-icon-text">
-                Copiar
+                Salvar
             </div>
         </div>
     );

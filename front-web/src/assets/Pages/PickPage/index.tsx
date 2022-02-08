@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { FrasePage } from 'types/frase';
 import Btn from '../../../assets/componets/Btn';
 import Pagination from 'assets/componets/Pagination';
+import Button from '../../componets/Button';
 
 function PickPage() {
 
@@ -39,7 +40,8 @@ function PickPage() {
         <>
             <Pagination page={page} onChange={handlePageChange}/>
             <div className="container">
-                <Btn />
+                <Btn copyToClipBoard={() => {}}/>
+                <Button />
                 <div className="row">
                     {page.content.map(item => (
                         <div key={item.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">

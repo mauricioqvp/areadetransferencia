@@ -1,0 +1,21 @@
+.btn-new-icon {
+    background-color: #33AFF2;
+    height: 40px;
+    width: 88px;
+    border-radius:5px;
+    display: flex;
+    color: rgb(0, 0, 0);
+}
+
+.left {
+    padding-left: 10px;
+    padding-top: 6px;
+
+}
+
+.right{ 
+    font-family: "Roboto";
+    font-size: 14px;
+    padding-left: 7px;
+    padding-top: 10px;
+}
