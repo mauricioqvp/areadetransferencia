@@ -1,5 +1,6 @@
 import CardText from 'assets/componets/CardText';
-import axios from 'axios';
+//import axios from 'axios';
+import { fetchProducts } from '../../Ferramentas/api';
 import './styles.css';
 import { BASE_URL } from 'utils/requests';
 import { useState, useEffect } from 'react';
@@ -25,7 +26,7 @@ function PickPage() {
     const [pageNumber, setPageNumber] = useState(0);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/frases?size=12&page=${pageNumber}&sort=qtdUsos,desc`)
+        fetchProducts(0)
             .then(response => {
                 const data = response.data as FrasePage;
                 setPage(data);
