@@ -26,7 +26,7 @@ function PickPage() {
     const [pageNumber, setPageNumber] = useState(0);
 
     useEffect(() => {
-        fetchProducts(0)
+        fetchProducts(pageNumber)
             .then(response => {
                 const data = response.data as FrasePage;
                 setPage(data);

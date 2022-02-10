@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Frase, FrasePage } from 'types/frase';
 import DuplicateBtn from '../DuplicateBtn';
 import UpdateBtn from '../UpdateBtn';
+import { ReactComponent as UpdateIcon } from '../../img/duplic.svg';
 import { makerequest } from '../../../utils/request';
 import './styles.css';
 
@@ -50,7 +51,8 @@ function CardText({ frase }: Props) {
                         />
                     </div>
                     <button className="btn btn-primary my-3">
-                        Submeter
+                        <UpdateIcon />
+                        Submeter {frase.id}
                     </button>
                     <div className="transferArea-form-btn-container">
                         <DuplicateBtn id={frase.id} />
