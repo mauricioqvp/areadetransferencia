@@ -3,6 +3,7 @@ import { Frase, FrasePage } from 'types/frase';
 import DuplicateBtn from '../DuplicateBtn';
 import UpdateBtn from '../UpdateBtn';
 import { ReactComponent as UpdateIcon } from '../../img/duplic.svg';
+import { ReactComponent as DuplicateIcon } from '../../img/rotate.svg';
 import { makerequest } from '../../../utils/request';
 import './styles.css';
 
@@ -13,10 +14,10 @@ type Props = {
 function CardText({ frase }: Props) {
 
     const [formData, setFormData] = useState<Frase>({
-        id : -1,
-        frases : 'mauricio',
-        qtdUsos : 0,
-        tipo : 0
+        id: -1,
+        frases: 'mauricio',
+        qtdUsos: 0,
+        tipo: 0
     });
 
 
@@ -24,7 +25,7 @@ function CardText({ frase }: Props) {
         const nome = event.target.name;
         const value = event.target.value;
 
-        setFormData(data => ({ ...data, [nome]: value , id : frase.id}));
+        setFormData(data => ({ ...data, [nome]: value, id: frase.id }));
         //setFormData(value);
         console.log(formData);
     }
@@ -33,7 +34,7 @@ function CardText({ frase }: Props) {
         event.preventDefault();
         console.log(formData);
 
-        makerequest({ url: `/frases/${frase.id}`,  method : 'PUT' , data: formData});
+        makerequest({ url: `/frases/${frase.id}`, method: 'PUT', data: formData });
     }
 
     return (
@@ -42,21 +43,31 @@ function CardText({ frase }: Props) {
                 <form className="transferArea-form" onSubmit={handleSubmit}>
                     <div className="form-group transferArea-form-group">
                         <label htmlFor="email">Categoria: {`${frase.tipo}`}</label>
-                        <input type="text" 
-                            name="frases" 
-                            className="texto" 
-                            id="caixa-texto" 
+                        <input type="text"
+                            name="frases"
+                            className="texto"
+                            id="caixa-texto"
                             placeholder={frase.frases}
                             onChange={handleChange}
                         />
                     </div>
-                    <button className="btn btn-primary my-3">
-                        <UpdateIcon />
-                        Submeter {frase.id}
-                    </button>
                     <div className="transferArea-form-btn-container">
-                        <DuplicateBtn id={frase.id} />
-                        <UpdateBtn  id={frase.id} />
+                        <div className="btn-new-icon">
+                            <div className="left">
+                                <DuplicateIcon />
+                            </div>
+                            <div className="right">
+                                Copiar
+                            </div>
+                        </div>
+                        <button type="submit" className="btn btn-new-icon" >
+                            <div className="left" >
+                                <UpdateIcon />
+                            </div>
+                            <div className="right">
+                                Update
+                            </div>
+                        </button>
                     </div>
                 </form >
             </div >

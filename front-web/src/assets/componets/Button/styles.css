@@ -5,6 +5,8 @@
     border-radius:5px;
     display: flex;
     color: rgb(0, 0, 0);
+    padding-left: 0px;
+    padding-top: 0px;
 }
 
 .left {
