@@ -27,7 +27,7 @@ function CardText({ frase }: Props) {
 
         setFormData(data => ({ ...data, [nome]: value, id: frase.id }));
         //setFormData(value);
-        console.log(formData);
+        console.log('Console.log:', formData);
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
