@@ -1,5 +1,5 @@
-import './styles.css';
 import { ReactComponent as DuplicateIcon } from '../../img/rotate.svg';
+import './styles.css';
 
 function Button() {
     return (

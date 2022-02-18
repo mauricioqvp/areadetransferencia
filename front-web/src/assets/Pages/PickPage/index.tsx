@@ -41,8 +41,8 @@ function PickPage() {
         <>
             <Pagination page={page} onChange={handlePageChange}/>
             <div className="container">
-                <Btn copyToClipBoard={() => {}}/>
-                <Button />
+
+
                 <div className="row">
                     {page.content.map(item => (
                         <div key={item.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
