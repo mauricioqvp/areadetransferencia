@@ -21,7 +21,7 @@ function CardText({ frase }: Props) {
     });
 
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleChange = (event: { target: { name: any; value: any; }; }) => {
         const nome = event.target.name;
         const value = event.target.value;
 
@@ -43,7 +43,7 @@ function CardText({ frase }: Props) {
                 <form className="transferArea-form" onSubmit={handleSubmit}>
                     <div className="form-group transferArea-form-group">
                         <label htmlFor="email">Categoria: {`${frase.tipo}`}</label>
-                        <input type="text"
+                        <textarea
                             name="frases"
                             className="texto"
                             id="caixa-texto"
