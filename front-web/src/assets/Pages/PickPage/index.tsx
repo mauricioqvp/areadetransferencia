@@ -9,10 +9,23 @@ import Btn from '../../../assets/componets/Btn';
 import Pagination from 'assets/componets/Pagination';
 import Button from '../../componets/Button';
 
+import InfosProvider from '../../../contexts/infos';
+
 function PickPage() {
 
     const [page, setPage] = useState<FrasePage>({
-        content: [],
+        content: [{
+            id: 1,
+            frases: 'pousada',
+            qtdUsos: 2,
+            tipo: 0
+        },
+        {
+            id: 2,
+            frases: 'pagamento',
+            qtdUsos: 3,
+            tipo: 2
+        }],
         last: true,
         totalPages: 0,
         totalElements: 0,
@@ -25,21 +38,21 @@ function PickPage() {
 
     const [pageNumber, setPageNumber] = useState(0);
 
-    useEffect(() => {
-        fetchProducts(pageNumber)
-            .then(response => {
-                const data = response.data as FrasePage;
-                setPage(data);
-            });
-    }, [pageNumber]);
+/*      useEffect(() => {
+            fetchProducts(pageNumber)
+                .then(response => {
+                    const data = response.data as FrasePage;
+                    setPage(data);
+                });
+        }, [pageNumber]); */
 
-    const handlePageChange = (newPageNumber : number) => {
+    const handlePageChange = (newPageNumber: number) => {
         setPageNumber(newPageNumber);
     }
 
     return (
-        <>
-            <Pagination page={page} onChange={handlePageChange}/>
+        <InfosProvider>
+            <Pagination page={page} onChange={handlePageChange} />
             <div className="container">
 
 
@@ -51,7 +64,7 @@ function PickPage() {
                     ))}
                 </div>
             </div>
-        </>
+        </InfosProvider>
     );
 }
 
